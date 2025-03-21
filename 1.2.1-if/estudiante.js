@@ -1,4 +1,4 @@
-let nota=95;
+let nota=65;
 
 if (nota >= 90){
     console.log("Excelente");
@@ -7,5 +7,5 @@ if (nota >= 90){
 }else if (nota >= 60 && nota <= 74){
     console.log("Suficiente")
 }else{
-    console.log("No aprueba")
+    console.log("El estudiante No aprueba")
 }
