@@ -11,21 +11,20 @@ if (nota >= 90){
 }
 
 let postre = "galletas";
-let bebida = "café";
+let bebida = "agua";
 
 if(postre === "gelatina"){
-    console.log("Estoy en el hospital comiendo gelatina");
+    console.log("Estoy en el hospital comiendo " + postre);
 }else if(postre === "pastel"){
-    console.log("Estoy en un cumpleaños comiendo pastel");
+    console.log("Estoy en un cumpleaños comiendo " + postre);
 }else if(postre ==="helado"){
-    console.log("Hace mucho calor por eso me compré un helado");
+    console.log("Hace mucho calor por eso me compré un " + postre);
 }else if(postre === "frutas" && bebida === "agua"){
-    console.log("Estoy a dieta");
-}else if(postre === "galletas" && bebida === "café"){
-    console.log("Estoy en un funeral")
+    console.log("Estoy a dieta con " + postre + " y " + bebida);
+}else if(postre === "galletas" || bebida === "café"){
+    console.log("Estoy en un funeral con " + postre + " y " + bebida);
 }else if(postre === "lechuga" || bebida === "agua de limón"){
     console.log("Soy vegetariana")
-}
-    else{
+}else{
     console.log("No hay postre para mí :(")
 }
