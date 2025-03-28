@@ -73,6 +73,21 @@ function mayusculasLibros(){
    let mayus = librosLeidos.map(libro => libro.toUpperCase());
    return mayus;
 }
+//7. Crear una función que muestre el nombre al revés de un libro en una posición
+function invertirNombre(indice){
+    if (indice < 0 || indice >= librosLeidos.length) {
+        console.log('Posición inválida. Por favor, elige un número entre 0 y ' + (librosLeidos.length - 1));
+        return;
+    }
+    let libro = librosLeidos[indice];
+
+    let libroInvertido = '';
+    for (let i = libro.length - 1; i >= 0; i--) {
+        libroInvertido += libro[i];
+    }
+
+    console.log(`El nombre del libro en la posición ${indice} invertido es: "${libroInvertido}"`);
+}
 agregarLibro('Romeo y Julieta');
 agregarLibro('Hamlet');
 agregarLibro('La hojarasca');
@@ -96,15 +111,18 @@ console.log(mayusculasLibros());
 
 buscarLibro('Hamlet');
 buscarLibro('Bambi'); //No existe
+
 buscarLibrosPorInicial('C');
 buscarLibrosPorInicial('l');
 buscarLibrosPorInicial('a'); //no hay
+
 eliminarLibro('Bambi'); //no existe
 eliminarLibro('hola');
 
 console.log(mostrarLibrosLeidos());
+
 console.log(ordenAlfaLibros());
-//console.log(buscarLibro('Hamlet'));
-//console.log(buscarLibro('Bambi'));
-//console.log(buscarLibrosporInicial());
-//console.log(mayusculasLibros());
+
+invertirNombre(3)
+invertirNombre(11)
+invertirNombre(13)
