@@ -8,13 +8,14 @@ function Libro(titulo, autor,anio,estado,capitulos){
         console.log(`Libro titulado "${this.titulo}", escrito por ${this.autor} en el año ${this.anio}, el estado es: ${this.estado}.`);
     }
 }
+//Agrega un capítulo
 function agregarCapitulo(Libro, nuevoCapitulo) {
     Libro.capitulos.push(nuevoCapitulo);
     console.log(`Capítulo agregado: ${nuevoCapitulo}`);
 }
-
+//Elimina un capítulo
 function eliminarCapitulo(Libro, capitulo) {
-    const indice = Libro.capitulos.indexOf(capitulo);
+    let indice = Libro.capitulos.indexOf(capitulo);
     if (indice !== -1) {
         Libro.capitulos.splice(indice, 1);
         console.log(`Capítulo eliminado: ${capitulo}`);
@@ -33,4 +34,7 @@ agregarCapitulo(Libro1, "Capítulo 4");
 eliminarCapitulo(Libro1, "Capítulo 2");
 agregarCapitulo(Libro2, "Capítulo 5");
 eliminarCapitulo(Libro2, "Capítulo 3");
+agregarCapitulo(Libro3, "Capítulo 6");
+eliminarCapitulo(Libro3, "Capítulo 1");
+eliminarCapitulo(Libro3,"Capítulo 8")
 
