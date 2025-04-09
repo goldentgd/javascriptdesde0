@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM con Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="titulo">Bienvenidos a mi página web</h1>
+
+    <p id = "firstParrafo">Este es el contenido inicial</p>
+
+    <button id="button">Da clic aquí</button>
+    <br>
+    <p id="parrafoOculto" style="display: none;">Párrafo oculto</p>
+    <button id="buttonHide">Mostrar contenido</button>
+    <input type=button onclick="Saludar()" value="Saludar">
+
+    <h2 id="mensajesAplicacion"></h2>
+    <h2>Lista de tareas</h2>
+    <label>Nueva tarea:</label><input id="agregarTareaInput" type="text">
+    <button id="agregarTareaBtn">Agregar tarea</button>
+    <!--<button onclick="agregarTarea()">Agregar tarea</button>-->
+    <ul id="listaTareas">
+        <li id ="li5">Sacar la basura<span style="display: none;">li5</span></li>
+        <li class=""><p>Hacer la cena</p></li>
+        <li class="li-class"><p>Pasear a los perros</p></li>
+    </ul>
+    <h2 id="mensajeError">Ocurrió un error</h2>
+    <script src="script.js"></script>
+</body>
+</html>
