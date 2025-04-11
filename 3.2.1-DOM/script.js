@@ -37,6 +37,7 @@ agregarTareaInput.value //permite acceder a lo que esta escrito en el input
 let botonAgregar = document.getElementById('agregarTareaBtn');
 //botonAgregar.onclick=agregarTarea;
 botonAgregar.addEventListener('click', agregarTarea);
+
 function agregarTarea(){
    //accediendo a input
    let agregarTareaInput = document.getElementById('agregarTareaInput');
@@ -48,9 +49,23 @@ function agregarTarea(){
    let listaTareas = document.getElementById('listaTareas');
    //creando nuevo elemento
    let nuevoLi = document.createElement('li'); 
-   nuevoLi.id='li5';
+
+   let parrafoNuevo = document.createElement("p");
+    parrafoNuevo.innerText = agregarTareaInput.value; // El atributo value me permite acceder a lo que está escrito en el input.
+    nuevoLi.appendChild(parrafoNuevo);
+
+    // Crear un botón nuevo
+    let botonEliminar = document.createElement("button");
+    botonEliminar.innerText = "Eliminar";
+
+    botonEliminar.addEventListener("click", () => {
+        //listaTareasUl.removeChild(nuevoLi); // removeChild() elimina un hijo de un elemento padre.
+        nuevoLi.remove(); // remove() se elimina asimismo.
+    });
+
+    parrafoNuevo.appendChild(botonEliminar);
    //creando texto
-   nuevoLi.innerText = agregarTareaInput.value;
+   //nuevoLi.innerText = agregarTareaInput.value;
    listaTareas.appendChild(nuevoLi);
    agregarTareaInput.value = "";
     document.getElementById("mensajesAplicacion").innerText = "";
@@ -58,15 +73,47 @@ function agregarTarea(){
     //Para eliminar un elemento usamos removeChild aplicado al papá
     let mensajeError = document.getElementById('mensajeError');
     document.body.removeChild(mensajeError);
-}
-function eliminarTarea(){
-    let listaTareas = document.getElementById('listaTareas');
-    let liTareas = listaTareas.getElementsByTagName('li');
-    if(liTareas.length > 0){
-        listaTareas.removeChild(liTareas[liTareas.length - 1]);
-        document.getElementById("mensajesAplicacion").innerText = "Tarea eliminada"
-        
-}
+    let mensajeErrorH2 = document.getElementById("mensajeError");
+    document.body.removeChild(mensajeErrorH2); // En este caso el elemento que quiero borrar es hijo del body.
+    // document.body es un atajo para acceder al elemento <body>
 }
 
+let agregarTareaBtn = document.getElementById("agregarTareaBtn"); // Buscando un elemento por su id.
+//agregarTareaBtn.onclick = agregarTarea; // Modificando la propiedad de un evento para agregarle una función.
+agregarTareaBtn.addEventListener("click", agregarTarea); 
 
+let funcionSuma = (a,b) => { 
+   return a + b;
+}
+
+function subtituloYParrafo(subtitulo, texto){
+   let nuevoDiv = document.createElement("div");
+   /*
+   nuevoDiv.innerHTML = "<h2>" + subtitulo + "</h2>" +
+                        "<p>" + texto + "</p>";
+   */
+
+   nuevoDiv.innerHTML = `<h2> ${subtitulo} </h2>` + 
+                        `<p> ${texto} </p>`;
+
+   return nuevoDiv;
+
+   //let pPrueba = document.querySelector("#prueba > p"); // querySelector nos permite buscar un elemento a través de selectores de css.
+   //pPrueba.innerHTML = "<b>Modificando el texto del párrafo</b>";
+}
+
+// Template string -> Es una manera de crear una cadena compuesta de constantes (texto) y expresiones de JS.
+/*
+   ` <- backticks <- alt + 96 
+           altgr + } (dos veces)
+           ctrl + alt + tecla }
+*/
+
+
+
+document.body.appendChild(subtituloYParrafo("Título 1", "Este es un texto de prueba"));
+document.body.appendChild(subtituloYParrafo("Título 2", "Este es un texto de prueba 2"));
+document.body.appendChild(subtituloYParrafo("Título 3", "Este es un texto de prueba 3"));
+document.body.appendChild(subtituloYParrafo("Título 4", "Este es un texto de prueba 4"));
+document.body.appendChild(subtituloYParrafo("Título 5", "Este es un texto de prueba 5"));
+document.body.appendChild(subtituloYParrafo("Título 6", "Este es un texto de prueba 7"));
